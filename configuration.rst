@@ -772,13 +772,13 @@ In production, the ``.env`` files are also parsed and loaded on each request. So
 the easiest way to define env vars is by deploying a ``.env.local`` file to your
 production server(s) with your production values.
 
-To improve performance, you can optionally run the ``dump-env`` command (available
+To improve performance, you can optionally run the ``dotenv:dump`` command (available
 in :ref:`Symfony Flex <symfony-flex>` 1.2 or later):
 
 .. code-block:: terminal
 
     # parses ALL .env files and dumps their final values to .env.local.php
-    $ composer dump-env prod
+    $ php bin/console dotenv:dump prod
 
 After running this command, Symfony will load the ``.env.local.php`` file to
 get the environment variables and will not spend time parsing the ``.env`` files.
